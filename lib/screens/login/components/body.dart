@@ -6,6 +6,7 @@ import 'package:football_ui/components/rounde_button.dart';
 import 'package:football_ui/components/rounded_input_field.dart';
 import 'package:football_ui/components/rounded_password_field.dart';
 import 'package:football_ui/screens/login/components/background.dart';
+import 'package:football_ui/screens/survey/survey_screen.dart';
 
 import '../../../constant.dart';
 
@@ -59,7 +60,16 @@ class Body extends StatelessWidget {
                 SizedBox(height: size.height * 0.001),
                 RoundedPasswordField(onChanged: (value) {}),
                 SizedBox(height: size.height * 0.02),
-                RoundedButton(text: 'GİRİŞ YAP', press: () {}),
+                RoundedButton(
+                    text: 'GİRİŞ YAP',
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const SurveyScreen();
+                        }),
+                      );
+                    }),
                 SizedBox(height: size.height * 0.02),
                 ForgotPassword(press: () {}, login: true),
                 SizedBox(height: size.height * 0.02),

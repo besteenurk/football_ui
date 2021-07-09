@@ -3,6 +3,7 @@ import 'package:flutter_svg/svg.dart';
 import 'package:football_ui/components/rounde_button.dart';
 import 'package:football_ui/constant.dart';
 import 'package:football_ui/screens/login/login_screen.dart';
+import 'package:football_ui/screens/comment/comment_screen.dart';
 import 'package:football_ui/screens/welcome/component/background.dart';
 
 class Body extends StatelessWidget {
@@ -66,7 +67,16 @@ class Body extends StatelessWidget {
                 SizedBox(
                   height: size.height * 0.02,
                 ),
-                RoundedButton(text: "KAYIT OL", press: () {}),
+                RoundedButton(
+                    text: "KAYIT OL",
+                    press: () {
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(builder: (context) {
+                          return const CommentScreen();
+                        }),
+                      );
+                    }),
               ],
             ),
           ),
